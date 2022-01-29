@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="info">Información <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="graficas">Gráficas</a>
+          </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <h1 style="text-align: center;"> Detección de Cáncer MLP</h1>
+<div class="container">
+    
+    <form action="/metricas" method= "post">
+       
+        <div class="container" >
+         <div class="row">
+             <div class="col-sm-8">
+                <div class="form-group col-md-4">
+                    <label for="inputEmail4">Nª de neuronas</label>
+                  <input type="number" name="neuronas" class="form-control mb-2" id="inlineFormInput" placeholder="Nª de neuronas"
+                  min="5" max="100">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputEmail4">Nª de épocas</label>
+                  <input type="number" name="epocas" class="form-control mb-2" id="inlineFormInput" placeholder="Nª de épocas"
+                  min="5" max="100">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="exampleFormControlSelect1">Optimizador </label>
+                    <select class="form-control" id="exampleFormControlSelect1" name="optimizador">
+                      <option value="adam">Adam</option>
+                      <option value="sgd">SGD</option>
+                      <option value="rmsprop" >Rmsprop</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputEmail4">Tasa de aprendizaje</label>
+                  <input type="number" value="0.0001" disabled="true" class="form-control mb-2" id="inlineFormInput" name="tasa" placeholder="Tasa de aprendizaje">
+                </div>
+                <div class="form-group col-md-4">
+                  <button type="submit" class="btn btn-primary mb-2">Predecir</button>
+                </div>
+             </div>
+             <div class="col-sm-4">
+              <img src="/static/mes-conciencia-cancer-mama_52683-44454.jpg" alt="cancer" width="400" height="300">
+             </div>
+          </div>
+         </div>
+        
+      </form>
+</div>
+{% endblock %}
