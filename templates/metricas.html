@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLP Cancer Detection</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link btn btn-outline-success my-2 my-sm-0" href="/">Inicio <span class="sr-only">(current)</span></a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+
+     <div class="container">
+         <br>
+        <h3>Métricas utilizadas para evaluar problemas de clasificacion</h3>
+
+        <div class="form-group col-md-8">
+
+          <p>
+              <h6>• Exactitud:</h6> Es una métrica de evaluación común para los problemas de 
+              clasificación. Es el número de predicciones correctas hechas como una proporción 
+              de todas las predicciones hechas.
+            </p>
+    
+            <p>
+                <h6>• Precisión:</h6> Es la métrica que calcula la relación entre las predicciones positivas 
+                correctas y los pronósticos positivos totales. Indica la calidad de la respuesta del 
+                clasificador.
+            </p>
+            <p>
+              <h6>• Sensibilidad:</h6> calcula la tasa de positivos verdaderos e indica la eficiencia en la 
+                clasificación de todos los elementos que son de la clase.
+    
+            </p>
+            <p>
+                <h6>• Medida F1:</h6> es la media armónica de la precisión y exhaustividad, donde la 
+                puntuación de la F1 alcanza su mejor valor en 1 (precisión y exhaustividad
+                perfectas) y el peor en 0.
+            </p>
+
+      </div>
+
+
+        <h5>Métricas obtenidas</h5>
+     
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Accuracy</th>
+              <th scope="col">Recall</th>
+              <th scope="col">Precision</th>
+              <th scope="col">F1 Score</th>
+              <th scope="col">R2</th>
+            </tr>
+          </thead>
+        
+          <tbody>
+            <tr>
+              <td>{{accuracy}}</td>
+              <td>{{sensi}}</td>
+              <td>{{precision}}</td>
+              <td>{{f1score}}</td>
+              <td>{{coefr2}}</td>
+            </tr>
+          </tbody>
+        </table>
+       
+        
+
+     </div>
+     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
